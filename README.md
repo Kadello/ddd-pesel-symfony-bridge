@@ -18,7 +18,7 @@ Lightweight, production-ready Symfony Bundle bridging pure Domain-Driven Design 
 Install the package via Composer:
 
 ```bash
-composer require twoj-nick/pesel-bundle
+composer require Kadello/pesel-bundle
 ```
 
 ## Usage

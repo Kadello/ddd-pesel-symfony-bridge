@@ -20,11 +20,11 @@ final class PeselToStringTransformerTest extends TestCase
 
     public function testTransform(): void
     {
-        $pesel = new Pesel('44051401358');
+        $pesel = new Pesel('44051401342');
 
         $this->assertSame('', $this->transformer->transform(null));
-        $this->assertSame('44051401358', $this->transformer->transform($pesel));
-        $this->assertSame('44051401358', $this->transformer->transform('44051401358'));
+        $this->assertSame('44051401342', $this->transformer->transform($pesel));
+        $this->assertSame('44051401342', $this->transformer->transform('44051401342'));
     }
 
     public function testReverseTransformValidValue(): void
@@ -32,9 +32,9 @@ final class PeselToStringTransformerTest extends TestCase
         $this->assertNull($this->transformer->reverseTransform(null));
         $this->assertNull($this->transformer->reverseTransform('   '));
 
-        $result = $this->transformer->reverseTransform('44051401358');
+        $result = $this->transformer->reverseTransform('44051401342');
         $this->assertInstanceOf(Pesel::class, $result);
-        $this->assertSame('44051401358', $result->value);
+        $this->assertSame('44051401342', $result->value);
     }
 
     public function testReverseTransformInvalidValueThrowsTransformationFailedException(): void

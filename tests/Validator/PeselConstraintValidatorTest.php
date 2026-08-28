@@ -29,10 +29,10 @@ final class PeselConstraintValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidPeselStringAndObjectAreValid(): void
     {
-        $this->validator->validate('44051401358', new PeselConstraint());
+        $this->validator->validate('44051401342', new PeselConstraint());
         $this->assertNoViolation();
 
-        $this->validator->validate(new Pesel('44051401358'), new PeselConstraint());
+        $this->validator->validate(new Pesel('44051401342'), new PeselConstraint());
         $this->assertNoViolation();
     }
 
@@ -49,6 +49,6 @@ final class PeselConstraintValidatorTest extends ConstraintValidatorTestCase
     public function testInvalidConstraintTypeThrowsException(): void
     {
         $this->expectException(UnexpectedTypeException::class);
-        $this->validator->validate('44051401358', new class extends \Symfony\Component\Validator\Constraint {});
+        $this->validator->validate('44051401342', new class extends \Symfony\Component\Validator\Constraint {});
     }
 }

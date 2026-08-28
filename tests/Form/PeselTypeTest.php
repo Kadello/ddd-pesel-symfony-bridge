@@ -16,10 +16,10 @@ final class PeselTypeTest extends TypeTestCase
             'as_object' => false,
         ]);
 
-        $form->submit('44051401358');
+        $form->submit('44051401342');
 
         $this->assertTrue($form->isSynchronized());
-        $this->assertSame('44051401358', $form->getData());
+        $this->assertSame('44051401342', $form->getData());
     }
 
     public function testSubmitValidDataAsObject(): void
@@ -28,12 +28,12 @@ final class PeselTypeTest extends TypeTestCase
             'as_object' => true,
         ]);
 
-        $form->submit('44051401358');
+        $form->submit('44051401342');
 
         $this->assertTrue($form->isSynchronized());
 
         $data = $form->getData();
         $this->assertInstanceOf(Pesel::class, $data);
-        $this->assertSame('44051401358', $data->value);
+        $this->assertSame('44051401342', $data->value);
     }
 }
